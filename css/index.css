@@ -1,6 +1,64 @@
+body, main{
+    background-color: #16161a;
+    color: #94a1b2;
+}
+
 header{
-    background:url("../img/background-header.jpg");
+    background:url("../img/background-header\ -\ copia.jpg");
     height: 100vh;
     width: 100vw;
     background-size: cover;
+    background-color: #16161a;
 }
+
+button{
+    background-color: #7f5af0;
+    color: #fffffe;
+}
+
+p{
+    color: #94a1b2;
+}
+
+
+
+/* ----------------NavBar---------------- */
+/* Navbar */
+.navbar-custom {
+    background-color: #16161a; /* Background color */
+  }
+  
+  .navbar-custom .navbar-brand {
+    color: #fffffe; /* Headline color */
+  }
+  
+  .navbar-custom .navbar-nav .nav-link {
+    color: #94a1b2; /* Paragraph color */
+  }
+  
+  .navbar-custom .navbar-nav .nav-link.active {
+    color: #7f5af0; /* Button color (para el link activo) */
+  }
+  
+  .navbar-custom .navbar-toggler {
+    border-color: #7f5af0; /* Color de borde del toggler */
+  }
+  
+  .navbar-custom .navbar-toggler-icon {
+    background-color: #fffffe; /* Icono del toggler */
+  }
+  
+  .navbar-custom .dropdown-menu {
+    background-color: #16161a; /* Fondo del dropdown */
+    border-color: #7f5af0; /* Borde del dropdown */
+  }
+  
+  .navbar-custom .dropdown-item {
+    color: #94a1b2; /* Texto del dropdown */
+  }
+  
+  .navbar-custom .dropdown-item:hover {
+    background-color: #7f5af0; /* Fondo al hover en dropdown */
+    color: #fffffe; /* Texto al hover en dropdown */
+  }
+  

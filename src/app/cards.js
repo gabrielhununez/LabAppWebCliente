@@ -1,6 +1,17 @@
 import {getProducts} from "../api.js";
+import { createModal } from "./modal.js";
 
 let cardContainer = document.querySelector("#template-card");
+
+function viewModal(prod) {
+	let modalTitle = document.querySelector('#staticBackdropLabel');
+	modalTitle.innerHTML = prod.title;
+	let modalImage = document.querySelector('#modal-img');
+	modalImage.src = prod.image;
+	modalImage.alt = prod.title;
+	let modalDescripcion = document.querySelector('#modal-description');
+	modalDescripcion.innerHTML = prod.description;
+}
 
 export function createCards() {
 	getProducts().then((data) => {
@@ -11,7 +22,7 @@ export function createCards() {
                            <div class="card-body text-center">
                                <h5 class="card-title">${prod.title}</h5>
                            </div>
-                           <button title="mas detalle del producto" type="button" id="btn-prod-${prod.id}">Mas detalles</button>
+                           <button title="Mas detalles del producto" type="button" id="btn-prod-${prod.id}">Mas detalles</button>
                            </div>
                        </div>`;
 			setTimeout(() => {
