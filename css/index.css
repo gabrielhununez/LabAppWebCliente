@@ -1,34 +1,95 @@
 body, main{
-    background-color: #16161a;
-    color: #94a1b2;
-}
-
-header{
-  background: url("../img/background-header - copia.jpg");
-  width: 100%;
-  background-size: cover;
-  padding: 10px 0; 
+  background-color: #eff0f3;
+  color: #94a1b2;
 }
 
 button{
-    background-color: #7f5af0;
-    color: #fffffe;
+  background-color: #ff8e3c;
+  color: #0d0d0d;
 }
 
 p{
-    color: #94a1b2;
+  color: #2a2a2a;
 }
 
+header{
+  background-color: #0d0d0d !important;
+}
 
 
 /* ----------------NavBar---------------- */
-/* Navbar  #1F3040*/
-  .navbar-custom {
-    background-color: transparent; /* Hace el fondo del nav transparente */
-    z-index: 1; /* Background color */
-  }
-  .btn-primary {
-    background-color:  #263e55 !important; 
+.navbar-custom {
+  background-color: transparent;
+  z-index: 1;
 }
-  
-  
+.btn-primary {
+  background-color:  #263e55 !important; 
+}
+
+
+
+/* ----------------Card---------------- */
+.product-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-img {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.product-img img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00a650;
+  margin-bottom: 10px;
+}
+
+.product-shipping {
+  font-size: 0.9rem;
+  color: #00a650;
+  margin-bottom: 5px;
+}
+
+.product-location {
+  font-size: 0.85rem;
+  color: #757575;
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  background-color: #3483fa;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #2968c8;
+}

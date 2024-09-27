@@ -16,15 +16,18 @@ function viewModal(prod) {
 export function createCards() {
 	getProducts().then((data) => {
 		data.map((prod) => {
-			let card = `<div class="col">
-                           <div class="card" style="height: 500px">
-                           <img src=${prod.image} class="card-img-top img-fluid object-fit-contain h-75" alt=${prod.title}>
-                           <div class="card-body text-center">
-                               <h5 class="card-title">${prod.title}</h5>
-                           </div>
-                           <button title="Mas detalles del producto" type="button" id="btn-prod-${prod.id}">Mas detalles</button>
-                           </div>
-                       </div>`;
+			let card = `<div class="col-md-4">
+							<div class="card product-card mb-4">
+								<div class="product-img">
+									<img src="${prod.image}" class="card-img-top" alt="${prod.title}">
+								</div>
+								<div class="card-body d-flex flex-column">
+									<h5 class="product-title">${prod.title}</h5>
+									<p class="product-price">$${prod.price}</p>
+									<button class="btn btn-primary w-100" id="btn-prod-${prod.id}">Agregar al carrito</button>
+								</div>
+							</div>
+						</div>`;;
 			setTimeout(() => {
 				let btnProd = document.querySelector(`#btn-prod-${prod.id}`);
 				btnProd.onclick = () => createModal(prod);
