@@ -1,4 +1,5 @@
 import { aside } from "./aside.js";
+import {showMsg} from "./toast.js";
 
 export function createModal(prod) {
     let modal = `
@@ -36,8 +37,8 @@ export function createModal(prod) {
       let btnAddToCart = document.querySelector(`#addCarrito-${prod.id}`);
       btnAddToCart.onclick = () => {
         let objlocalStorage = JSON.parse(localStorage.getItem("productosCarrito"));
-        let producExist = objlocalStorage.find((prod) => prod.id === prod.id);
-        let index = objlocalStorage.findIndex((prod) => prod.id === prod.id);
+        let producExist = objlocalStorage.find((product) => product.id === prod.id);
+        let index = objlocalStorage.findIndex((product) => product.id === prod.id);
   
         if (producExist) {
           producExist.quantity = producExist.quantity + 1;
@@ -50,7 +51,9 @@ export function createModal(prod) {
         /* objlocalStorage.push(product); */
         /* guardar en localstorage. solo admite tipo string */
         localStorage.setItem("productosCarrito", JSON.stringify(objlocalStorage));
+        showMsg("Product added to cart", "info");
         aside();
+        myModal.hide();
       };
     }, 0);
 
