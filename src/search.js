@@ -18,15 +18,34 @@ export function buscador() {
 					let card;
 					if (prod.title.toLowerCase().includes(e.target.value.toLowerCase())) {
 						exist = true;
-						card = `<div class="col">
-								<div class="card" style="height: 500px">
-								<img src=${prod.image} class="card-img-top img-fluid object-fit-contain h-75" alt=${prod.title}>
-								<div class="card-body text-center">
-									<h5 class="card-title text-truncate">${prod.title}</h5>
-								</div>
-								<button title="mas detalle del producto" type="button" id="btn-prod-${prod.id}">Mas detalles</button>
-								</div>
-							</div>`;
+						card = `
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">${prod.title}</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class='card mb-3' style='max-width: 540px;'>
+                <div class='row g-0'>
+                    <div class='col-md-4'>
+                        <img id='modal-img' src='${prod.image}' class="img-fluid rounded-start" alt='${prod.title}'>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <p class="card-text">'${prod.description}'</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" id="addCarrito-${prod.id}">Sumar al Carrito</button>
+          </div>
+        </div>
+    </div>
+    `
 						cardContainer.innerHTML += card;
 
 						setTimeout(() => {
